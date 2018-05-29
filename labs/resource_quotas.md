@@ -29,7 +29,7 @@ We now have our own "virtual" cluster in the Namespace titled "myspace".
 Let us now apply a resource quota to the "myspace" Namespace. This quota will limit the number of pods in this Namespace to 1. Though a simplistic example, resource quotas are also available for other resources like CPU/Mem requests and limits.
 
 ```
-kubectl apply -f kubernetes/resourcequotas/resourcequota-pods.yaml
+kubectl apply -f kubernetes/resourcequotas/resourcequota-pods.yaml --namespace=myspace
 ```
 
 We now have a resource quota of 1 Pod applied our "myspace" Namespace.
