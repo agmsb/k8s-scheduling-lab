@@ -12,13 +12,15 @@ spec:
       labels:
         app: nginx
     spec:
+    # accompanying tolerations for our node taint
       tolerations:
       - key: dedicated
         operator: Equal
         value: advanced
         effect: NoSchedule
+   # nodeSelector to attract pod to desired Node Pool
       nodeSelector: 
-        cloud.google.com/gke-nodepool=dead-pool
+        cloud.google.com/gke-nodepool=advanced-pool
       containers:
       - name: nginx
         image: nginx:1.7.9

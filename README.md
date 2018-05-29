@@ -24,10 +24,10 @@ In this lab, we will evaluate influencing scheduling by doing the following:
 
 We will also:
 
-5. Create Resource Quotas in a Namespace
+5. [Create Resource Quotas in a Namespace](/labs/resource_quotas.md)
 6. Observe Resource Quota Effect
 
-Lastly, feel free to peruse Kelsey Hightower's excellent [tutorial](https://github.com/kelseyhightower/denyenv-validating-admission-webhook) on validating admission webhooks.
+Lastly, feel free to peruse [Kelsey Hightower's excellent tutorial](https://github.com/kelseyhightower/denyenv-validating-admission-webhook) on validating admission webhooks, where you will:
 
 7. [Optional] Create a Validating Admission Webhook
 8. [Optional] Observe Validating Admission Webhook Effect
