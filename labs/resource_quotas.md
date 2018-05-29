@@ -39,13 +39,13 @@ We now have a resource quota of 1 Pod applied our "myspace" Namespace.
 We can now create pods to test this Resource Quota. Begin by consuming the entire quota with a single pod.
 
 ```
-kubectl apply -f kubernetes/pods/pod.yaml
+kubectl apply -f kubernetes/pods/pod.yaml --namespace=myspace
 ```
 
 Then try to exceed the given quota:
 
 ```
-kubectl apply -f kubernetes/pods/pod-2.yaml
+kubectl apply -f kubernetes/pods/pod-2.yaml --namespace=myspace
 ```
 
 Our resource quota is now in effect.
