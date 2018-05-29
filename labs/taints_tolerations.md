@@ -1,30 +1,4 @@
-# Kubernetes Scheduling Lab
-
-If you are reading this, welcome! We will be reviewing ways to influence scheduling in Kubernetes.
-
-## Requirements
-
-This lab currently assumes that you have the below set up:
-
-1. Google Cloud Platform Project
-2. gcloud SDK configured
-3. Google Kubernetes Engine Cluster in a Single Zone
-4. Have this repository cloned in your Google Cloud Shell.
-
-Please note that there are respective billing costs associated with running resources in Google Cloud Platform.
-
-## Expectations 
-
-In this lab, we will do the following:
-
-1. Add a Node Pool to our GKE cluster with Taints
-2. Observe Taint Effect
-3. Apply Toleration and NodeSelector to a given Workload
-4. Observe Toleration and NodeSelector Effect
-5. Create Resource Quotas in a Namespace
-6. Observe Resource Quota Effect
-7. [Optional] Create a Validating Admission Webhook
-8. [Optional] Observe Validating Admission Webhook Effect
+## Taints and Tolerations Lab
 
 ### Add Node Pool with Taints
 
@@ -46,7 +20,7 @@ The nodes will now have a Taint, prohibiting workloads without an appropriate to
 
 ### Deploy Nginx with No Toleration 
 
-Deploy an nginx pod using a Deployment named "nginx-none" to observe the Taint in action. You can view the .yaml [here](/kubernetes/deployments/nginx.yaml).
+Deploy an nginx pod using a Deployment named "nginx-none" to observe the Taint in action. You can view the .yaml [here](k8s-scheduling-lab/kubernetes/deployments/nginx.yaml).
 
 ```
 kubectl apply -f deployments/nginx.yaml
@@ -72,7 +46,7 @@ Adding a matching Toleration to a pod specification will allow the pod to be sch
 ```
 It should be noted that tolerations do not define attraction, merely permissions. In the scenario where you have provisioned special hardware for a workload, you may want to define attraction using nodeSelector or nodeAffinity.
 
-[This](/deployments/nginx-toleration-nodeselector.yaml) .yaml will add nodeSelector to the pod specification to also ensure that the permitted pod is scheduled on "advanced-pool" Node Pool. GKE provides us with OOTB labels in the nodeSpec; use the label signifying Node Pool name.
+[This](k8s-scheduling-lab/kubernetes/deployments/nginx-toleration-nodeselector.yaml) .yaml will add nodeSelector to the pod specification to also ensure that the permitted pod is scheduled on "advanced-pool" Node Pool. GKE provides us with OOTB labels in the nodeSpec; use the label signifying Node Pool name.
 
 ```
       nodeSelector: 
@@ -92,6 +66,3 @@ kubectl get po -o wide
 ```
 
 This pod should now be running on a node in your "advanced-pool" Node Pool.
-
-
-
