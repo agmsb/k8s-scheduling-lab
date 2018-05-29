@@ -19,14 +19,18 @@ Please note that there are respective billing costs associated with running reso
 
 In this lab, we will evaluate influencing scheduling by doing the following:
 
-1. [Add a Node Pool to our GKE cluster with Taints](/labs/taints_tolerations.md)
+[Taints and Tolerations Lab](/labs/taints_tolerations.md)
+
+1. Add a Node Pool to our GKE cluster with Taints
 2. Observe Taint Effect
 3. Apply Toleration and NodeSelector to a given Workload
 4. Observe Toleration and NodeSelector Effect
 
-We will also:
+We will also complete the:
 
-5. [Create Resource Quotas in a Namespace](/labs/resource_quotas.md)
+[Resource Quotas Lab](/labs/resource_quotas.md)
+
+5. Create Resource Quotas in a Namespace
 6. Observe Resource Quota Effect
 
 Lastly, feel free to peruse [Kelsey Hightower's excellent tutorial](https://github.com/kelseyhightower/denyenv-validating-admission-webhook) on validating admission webhooks, where you will:
