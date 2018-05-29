@@ -20,7 +20,7 @@ The nodes will now have a Taint, prohibiting workloads without an appropriate to
 
 ### Deploy Nginx with No Toleration 
 
-Deploy an nginx pod using a Deployment named "nginx-none" to observe the Taint in action. You can view the .yaml [here](k8s-scheduling-lab/kubernetes/deployments/nginx.yaml).
+Deploy an nginx pod using a Deployment named "nginx-none" to observe the Taint in action. You can view the .yaml [here](https://github.com/agmsb/k8s-scheduling-lab/blob/master/kubernetes/deployments/nginx.yaml).
 
 ```
 kubectl apply -f deployments/nginx.yaml
@@ -46,7 +46,7 @@ Adding a matching Toleration to a pod specification will allow the pod to be sch
 ```
 It should be noted that tolerations do not define attraction, merely permissions. In the scenario where you have provisioned special hardware for a workload, you may want to define attraction using nodeSelector or nodeAffinity.
 
-[This](k8s-scheduling-lab/kubernetes/deployments/nginx-toleration-nodeselector.yaml) .yaml will add nodeSelector to the pod specification to also ensure that the permitted pod is scheduled on "advanced-pool" Node Pool. GKE provides us with OOTB labels in the nodeSpec; use the label signifying Node Pool name.
+[This](https://github.com/agmsb/k8s-scheduling-lab/blob/master/kubernetes/deployments/nginx-toleration-nodeselector.yaml) .yaml will add nodeSelector to the pod specification to also ensure that the permitted pod is scheduled on "advanced-pool" Node Pool. GKE provides us with OOTB labels in the nodeSpec; use the label signifying Node Pool name.
 
 ```
       nodeSelector: 
