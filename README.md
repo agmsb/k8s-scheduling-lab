@@ -10,7 +10,7 @@ This lab currently assumes that you have the below set up:
 
 1. Google Cloud Platform Project
 2. gcloud SDK configured
-3. Google Kubernetes Engine Cluster in a Single Zone
+3. Google Kubernetes Engine Cluster in a single GCP Zone
 4. Have this repository cloned in your Google Cloud Shell.
 
 Please note that there are respective billing costs associated with running resources in Google Cloud Platform.

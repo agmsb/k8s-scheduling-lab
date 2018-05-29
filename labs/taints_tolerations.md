@@ -23,7 +23,7 @@ The nodes will now have a Taint, prohibiting workloads without an appropriate to
 Deploy an nginx pod using a Deployment named "nginx-none" to observe the Taint in action. You can view the .yaml [here](https://github.com/agmsb/k8s-scheduling-lab/blob/master/kubernetes/deployments/nginx.yaml).
 
 ```
-kubectl apply -f deployments/nginx.yaml
+kubectl apply -f kubernetes/deployments/nginx.yaml
 ```
 
 Now get the pod resource to see what node it was scheduled on.
@@ -56,7 +56,7 @@ It should be noted that tolerations do not define attraction, merely permissions
 Deploy the new nginx pod using a Deployment titled "nginx-toleration-nodeselector.yaml".
 
 ```
-kubectl apply -f deployments/nginx-toleration-nodeselector.yaml
+kubectl apply -f kubernetes/deployments/nginx-toleration-nodeselector.yaml
 ```
 
 Now get the pod resource to see what node it was scheduled on.
@@ -66,3 +66,7 @@ kubectl get po -o wide
 ```
 
 This pod should now be running on a node in your "advanced-pool" Node Pool.
+
+### Wrapping Up 
+
+[Let's move on to Resource Quotas!](/resource_quotas.md)
