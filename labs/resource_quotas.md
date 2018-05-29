@@ -52,5 +52,5 @@ Our resource quota is now in effect.
 
 ### Wrapping Up
 
-Let us now move on to [validating admission webhooks](https://github.com/kelseyhightower/denyenv-validating-admission-webhook)!
+Let's move on to [validating admission webhooks](https://github.com/kelseyhightower/denyenv-validating-admission-webhook)!
 
