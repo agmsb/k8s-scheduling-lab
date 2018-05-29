@@ -50,7 +50,7 @@ It should be noted that tolerations do not define attraction, merely permissions
 
 ```
       nodeSelector: 
-        cloud.google.com/gke-nodepool=dead-pool
+        cloud.google.com/gke-nodepool=advanced-pool
 ```
 
 Deploy the new nginx pod using a Deployment titled "nginx-toleration-nodeselector.yaml".
