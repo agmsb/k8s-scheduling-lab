@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-toleration-nodeselector
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2 
+  template: 
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      tolerations:
+      - key: dedicated
+        operator: Equal
+        value: advanced
+        effect: NoSchedule
+      nodeSelector: 
+        cloud.google.com/gke-nodepool=dead-pool
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
