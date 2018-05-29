@@ -2,6 +2,8 @@
 
 If you are reading this, welcome! We will be reviewing ways to influence scheduling in Kubernetes.
 
+Also beware, this is definitely not an official Google product.
+
 ## Requirements
 
 This lab currently assumes that you have the below set up:
