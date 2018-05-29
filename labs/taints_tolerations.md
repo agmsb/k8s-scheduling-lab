@@ -1,5 +1,11 @@
 ## Taints and Tolerations Lab
 
+Let's start by using the gcloud beta API.
+
+```
+gcloud config set container/use_v1_api false
+```
+
 ### Add Node Pool with Taints
 
 In your Google Kubernetes Engine cluster, you should have one or more node pools. In order to demonstrate advanced scheduling techniques, we will add a different node pool with Taints. 
@@ -11,12 +17,12 @@ This is particularly useful for intensive workloads that have special requiremen
 Create a Node Pool titled "advanced-pool" with the Taint "dedicated=advanced:NoSchedule". 
 
 ```
-gcloud container node-pools create advanced-pool \
---cluster [CLUSTER_NAME] --zone [COMPUTE_ZONE] \ 
---num-nodes 2 --machine-type n1-standard-1 \
---node-taints dedicated=advanced:NoSchedule
+gcloud beta container node-pools create advanced-pool --cluster [CLUSTER-NAME] --zone [COMPUTE-ZONE] --num-nodes 2 --machine-type n1-standard-1 --node-taints dedicated=advanced:NoSchedule
 ```
-The nodes will now have a Taint, prohibiting workloads without an appropriate toleration to be scheduled on these nodes.
+
+It should take a few minutes to create the new node pool. 
+
+The nodes created will now have a Taint, prohibiting workloads without an appropriate toleration to be scheduled on these nodes.
 
 ### Deploy Nginx with No Toleration 
 
@@ -50,7 +56,7 @@ It should be noted that tolerations do not define attraction, merely permissions
 
 ```
       nodeSelector: 
-        cloud.google.com/gke-nodepool=advanced-pool
+        cloud.google.com/gke-nodepool: advanced-pool
 ```
 
 Deploy the new nginx pod using a Deployment titled "nginx-toleration-nodeselector.yaml".
